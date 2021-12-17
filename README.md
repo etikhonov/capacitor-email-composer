@@ -71,9 +71,9 @@ open(options?: OpenOptions | undefined) => Promise<void>
 
 Open the E-Mail Composer
 
-| Param         | Type                                                | Description                            |
-| ------------- | --------------------------------------------------- | -------------------------------------- |
-| **`options`** | <code><a href="#openoptions">OpenOptions</a></code> | optional Options to prefill the E-Mail |
+| Param         | Type                                                | Description                             |
+| ------------- | --------------------------------------------------- | --------------------------------------- |
+| **`options`** | <code><a href="#openoptions">OpenOptions</a></code> | optional Options to pre-fill the E-Mail |
 
 --------------------
 
@@ -83,14 +83,15 @@ Open the E-Mail Composer
 
 #### OpenOptions
 
-| Prop          | Type                  | Description                                                |
-| ------------- | --------------------- | ---------------------------------------------------------- |
-| **`to`**      | <code>string[]</code> | email addresses for TO field                               |
-| **`cc`**      | <code>string[]</code> | email addresses for CC field                               |
-| **`bcc`**     | <code>string[]</code> | email addresses for BCC field                              |
-| **`subject`** | <code>string</code>   | subject of the email                                       |
-| **`body`**    | <code>string</code>   | email body                                                 |
-| **`isHtml`**  | <code>boolean</code>  | indicats if the body is HTML or plain text (primarily iOS) |
+| Prop              | Type                            | Description                                                 |
+| ----------------- | ------------------------------- | ----------------------------------------------------------- |
+| **`to`**          | <code>string[]</code>           | email addresses for TO field                                |
+| **`cc`**          | <code>string[]</code>           | email addresses for CC field                                |
+| **`bcc`**         | <code>string[]</code>           | email addresses for BCC field                               |
+| **`subject`**     | <code>string</code>             | subject of the email                                        |
+| **`body`**        | <code>string</code>             | email body                                                  |
+| **`isHtml`**      | <code>boolean</code>            | indicates if the body is HTML or plain text (primarily iOS) |
+| **`attachments`** | <code>string \| string[]</code> | attachments absolute path                                   |
 
 </docgen-api>
 

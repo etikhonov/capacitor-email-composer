@@ -11,7 +11,7 @@ export interface EmailComposerPlugin {
   /**
    * Open the E-Mail Composer
    *
-   * @param options optional Options to prefill the E-Mail
+   * @param options optional Options to pre-fill the E-Mail
    * @since 1.0.0
    */
   open(options?: OpenOptions): Promise<void>;
@@ -54,9 +54,15 @@ export interface OpenOptions {
   body?: string;
 
   /**
-   * indicats if the body is HTML or plain text (primarily iOS)
+   * indicates if the body is HTML or plain text (primarily iOS)
    *
    * @since 1.0.1
    */
   isHtml?: boolean;
+
+  /**
+   * attachments absolute path
+   *
+   */
+  attachments?: string | string[];
 }

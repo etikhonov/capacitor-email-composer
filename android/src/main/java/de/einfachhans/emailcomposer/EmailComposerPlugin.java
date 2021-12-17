@@ -1,5 +1,6 @@
 package de.einfachhans.emailcomposer;
 
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import androidx.activity.result.ActivityResult;
 import com.getcapacitor.JSObject;
@@ -24,8 +25,14 @@ public class EmailComposerPlugin extends Plugin {
 
     @PluginMethod
     public void open(PluginCall call) throws JSONException {
-        Intent draft = implementation.getIntent(call);
-        startActivityForResult(call, draft, "openCallback");
+        try {
+            Intent draft = implementation.getIntent(call, this.getContext());
+            startActivityForResult(call, draft, "openCallback");
+        } catch (ActivityNotFoundException anf) {
+            call.reject("No Activity found to send E-Mail");
+        } catch (IllegalArgumentException illegalArgument) {
+            call.reject(illegalArgument.getMessage());
+        }
     }
 
     @ActivityCallback
