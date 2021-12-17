@@ -1,0 +1,199 @@
+{
+  "api": {
+    "name": "EmailComposerPlugin",
+    "slug": "emailcomposerplugin",
+    "docs": "",
+    "tags": [],
+    "methods": [
+      {
+        "name": "hasAccount",
+        "signature": "() => Promise<{ hasAccount: boolean; }>",
+        "parameters": [],
+        "returns": "Promise<{ hasAccount: boolean; }>",
+        "tags": [
+          {
+            "name": "since",
+            "text": [
+              {
+                "text": "1.0.0",
+                "kind": "text"
+              }
+            ]
+          }
+        ],
+        "docs": "Checks if the User can send a Mail\niOS: Check if the current Device is configured to send mail\nAndroid: Currently does nothing",
+        "complexTypes": [],
+        "slug": "hasaccount"
+      },
+      {
+        "name": "open",
+        "signature": "(options?: OpenOptions | undefined) => Promise<void>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "optional Options to pre-fill the E-Mail",
+            "type": "OpenOptions | undefined"
+          }
+        ],
+        "returns": "Promise<void>",
+        "tags": [
+          {
+            "name": "param",
+            "text": [
+              {
+                "text": "options",
+                "kind": "parameterName"
+              },
+              {
+                "text": " ",
+                "kind": "space"
+              },
+              {
+                "text": "optional Options to pre-fill the E-Mail",
+                "kind": "text"
+              }
+            ]
+          },
+          {
+            "name": "since",
+            "text": [
+              {
+                "text": "1.0.0",
+                "kind": "text"
+              }
+            ]
+          }
+        ],
+        "docs": "Open the E-Mail Composer",
+        "complexTypes": [
+          "OpenOptions"
+        ],
+        "slug": "open"
+      }
+    ],
+    "properties": []
+  },
+  "interfaces": [
+    {
+      "name": "OpenOptions",
+      "slug": "openoptions",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "to",
+          "tags": [
+            {
+              "text": [
+                {
+                  "text": "1.0.0",
+                  "kind": "text"
+                }
+              ],
+              "name": "since"
+            }
+          ],
+          "docs": "email addresses for TO field",
+          "complexTypes": [],
+          "type": "string[] | undefined"
+        },
+        {
+          "name": "cc",
+          "tags": [
+            {
+              "text": [
+                {
+                  "text": "1.0.0",
+                  "kind": "text"
+                }
+              ],
+              "name": "since"
+            }
+          ],
+          "docs": "email addresses for CC field",
+          "complexTypes": [],
+          "type": "string[] | undefined"
+        },
+        {
+          "name": "bcc",
+          "tags": [
+            {
+              "text": [
+                {
+                  "text": "1.0.0",
+                  "kind": "text"
+                }
+              ],
+              "name": "since"
+            }
+          ],
+          "docs": "email addresses for BCC field",
+          "complexTypes": [],
+          "type": "string[] | undefined"
+        },
+        {
+          "name": "subject",
+          "tags": [
+            {
+              "text": [
+                {
+                  "text": "1.0.0",
+                  "kind": "text"
+                }
+              ],
+              "name": "since"
+            }
+          ],
+          "docs": "subject of the email",
+          "complexTypes": [],
+          "type": "string | undefined"
+        },
+        {
+          "name": "body",
+          "tags": [
+            {
+              "text": [
+                {
+                  "text": "1.0.0",
+                  "kind": "text"
+                }
+              ],
+              "name": "since"
+            }
+          ],
+          "docs": "email body",
+          "complexTypes": [],
+          "type": "string | undefined"
+        },
+        {
+          "name": "isHtml",
+          "tags": [
+            {
+              "text": [
+                {
+                  "text": "1.0.1",
+                  "kind": "text"
+                }
+              ],
+              "name": "since"
+            }
+          ],
+          "docs": "indicates if the body is HTML or plain text (primarily iOS)",
+          "complexTypes": [],
+          "type": "boolean | undefined"
+        },
+        {
+          "name": "attachments",
+          "tags": [],
+          "docs": "attachments absolute path",
+          "complexTypes": [],
+          "type": "string | string[] | undefined"
+        }
+      ]
+    }
+  ],
+  "enums": [],
+  "typeAliases": [],
+  "pluginConfigs": []
+}
