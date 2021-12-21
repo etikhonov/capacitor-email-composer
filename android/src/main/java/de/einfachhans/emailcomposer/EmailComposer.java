@@ -154,6 +154,7 @@ public class EmailComposer {
             intent.setType("*/*");
             intent.addFlags(FLAG_ACTIVITY_NEW_TASK | FLAG_ACTIVITY_CLEAR_TASK);
             intent.addFlags(FLAG_ACTIVITY_PREVIOUS_IS_TOP);
+            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
             intents.add(intent);
         }
         if (intents.size() == 1) {
