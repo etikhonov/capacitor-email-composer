@@ -2,8 +2,8 @@
     package="de.einfachhans.emailcomposer">
     <queries>
         <intent>
-            <action android:name="android.intent.action.ACTION_SENDTO" />
-            <data android:scheme="mailto" />
+            <action android:name="android.intent.action.SENDTO"/>
+            <data android:scheme="mailto"/>
         </intent>
     </queries>
       <application>
