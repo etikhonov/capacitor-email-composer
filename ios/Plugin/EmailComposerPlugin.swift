@@ -17,6 +17,11 @@ public class EmailComposerPlugin: CAPPlugin, MFMailComposeViewControllerDelegate
     }
 
     @objc func open(_ call: CAPPluginCall) {
+        guard MFMailComposeViewController.canSendMail() else {
+            call.reject("No EMail Accounts Configured!")
+            return
+        }
+        
         DispatchQueue.main.async {
             self.savedOpenCall = call;
             let draft = self.implementation.getMailComposerFromCall(call, delegateTo: self);
